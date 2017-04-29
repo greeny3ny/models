@@ -5,8 +5,8 @@
       <author>Blender User</author>
       <authoring_tool>Blender 2.78.0 commit date:2017-02-24, commit time:14:33, hash:e92f235283</authoring_tool>
     </contributor>
-    <created>2017-04-29T14:16:02</created>
-    <modified>2017-04-29T14:16:02</modified>
+    <created>2017-04-29T14:18:07</created>
+    <modified>2017-04-29T14:18:07</modified>
     <unit name="meter" meter="1"/>
     <up_axis>Z_UP</up_axis>
   </asset>
@@ -429,6 +429,32 @@
       </profile_COMMON>
     </effect>
     <effect id="BoothMat1_013-effect">
+      <profile_COMMON>
+        <technique sid="common">
+          <phong>
+            <emission>
+              <color sid="emission">0 0 0 1</color>
+            </emission>
+            <ambient>
+              <color sid="ambient">0 0 0 1</color>
+            </ambient>
+            <diffuse>
+              <color sid="diffuse">0.2548301 0.1678372 0.1205772 1</color>
+            </diffuse>
+            <specular>
+              <color sid="specular">0.5 0.5 0.5 1</color>
+            </specular>
+            <shininess>
+              <float sid="shininess">50</float>
+            </shininess>
+            <index_of_refraction>
+              <float sid="index_of_refraction">1</float>
+            </index_of_refraction>
+          </phong>
+        </technique>
+      </profile_COMMON>
+    </effect>
+    <effect id="BoothMat1-effect">
       <profile_COMMON>
         <technique sid="common">
           <phong>
@@ -2118,32 +2144,6 @@
         </technique>
       </profile_COMMON>
     </effect>
-    <effect id="BoothMat1-effect">
-      <profile_COMMON>
-        <technique sid="common">
-          <phong>
-            <emission>
-              <color sid="emission">0 0 0 1</color>
-            </emission>
-            <ambient>
-              <color sid="ambient">0 0 0 1</color>
-            </ambient>
-            <diffuse>
-              <color sid="diffuse">0.2548301 0.1678372 0.1205772 1</color>
-            </diffuse>
-            <specular>
-              <color sid="specular">0.5 0.5 0.5 1</color>
-            </specular>
-            <shininess>
-              <float sid="shininess">50</float>
-            </shininess>
-            <index_of_refraction>
-              <float sid="index_of_refraction">1</float>
-            </index_of_refraction>
-          </phong>
-        </technique>
-      </profile_COMMON>
-    </effect>
     <effect id="Material_005-effect">
       <profile_COMMON>
         <technique sid="common">
@@ -2587,6 +2587,9 @@
     <material id="BoothMat1_013-material" name="BoothMat1_013">
       <instance_effect url="#BoothMat1_013-effect"/>
     </material>
+    <material id="BoothMat1-material" name="BoothMat1">
+      <instance_effect url="#BoothMat1-effect"/>
+    </material>
     <material id="BoothMat1_012-material" name="BoothMat1_012">
       <instance_effect url="#BoothMat1_012-effect"/>
     </material>
@@ -2778,9 +2781,6 @@
     </material>
     <material id="Material_009-material" name="Material_009">
       <instance_effect url="#Material_009-effect"/>
-    </material>
-    <material id="BoothMat1-material" name="BoothMat1">
-      <instance_effect url="#BoothMat1-effect"/>
     </material>
     <material id="Material_005-material" name="Material_005">
       <instance_effect url="#Material_005-effect"/>
@@ -3415,7 +3415,7 @@
         <vertices id="Cylinder_110-mesh-vertices">
           <input semantic="POSITION" source="#Cylinder_110-mesh-positions"/>
         </vertices>
-        <polylist count="124">
+        <polylist material="BoothMat1-material" count="124">
           <input semantic="VERTEX" source="#Cylinder_110-mesh-vertices" offset="0"/>
           <input semantic="NORMAL" source="#Cylinder_110-mesh-normals" offset="1"/>
           <vcount>3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 </vcount>
@@ -3448,7 +3448,7 @@
         <vertices id="Cylinder_109-mesh-vertices">
           <input semantic="POSITION" source="#Cylinder_109-mesh-positions"/>
         </vertices>
-        <polylist count="124">
+        <polylist material="BoothMat1-material" count="124">
           <input semantic="VERTEX" source="#Cylinder_109-mesh-vertices" offset="0"/>
           <input semantic="NORMAL" source="#Cylinder_109-mesh-normals" offset="1"/>
           <vcount>3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 </vcount>
@@ -3481,7 +3481,7 @@
         <vertices id="Cylinder_108-mesh-vertices">
           <input semantic="POSITION" source="#Cylinder_108-mesh-positions"/>
         </vertices>
-        <polylist count="124">
+        <polylist material="BoothMat1-material" count="124">
           <input semantic="VERTEX" source="#Cylinder_108-mesh-vertices" offset="0"/>
           <input semantic="NORMAL" source="#Cylinder_108-mesh-normals" offset="1"/>
           <vcount>3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 </vcount>
@@ -3613,7 +3613,7 @@
         <vertices id="Cylinder_107-mesh-vertices">
           <input semantic="POSITION" source="#Cylinder_107-mesh-positions"/>
         </vertices>
-        <polylist count="124">
+        <polylist material="BoothMat1-material" count="124">
           <input semantic="VERTEX" source="#Cylinder_107-mesh-vertices" offset="0"/>
           <input semantic="NORMAL" source="#Cylinder_107-mesh-normals" offset="1"/>
           <vcount>3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 </vcount>
@@ -3646,7 +3646,7 @@
         <vertices id="Cylinder_106-mesh-vertices">
           <input semantic="POSITION" source="#Cylinder_106-mesh-positions"/>
         </vertices>
-        <polylist count="124">
+        <polylist material="BoothMat1-material" count="124">
           <input semantic="VERTEX" source="#Cylinder_106-mesh-vertices" offset="0"/>
           <input semantic="NORMAL" source="#Cylinder_106-mesh-normals" offset="1"/>
           <vcount>3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 </vcount>
@@ -3679,7 +3679,7 @@
         <vertices id="Cylinder_105-mesh-vertices">
           <input semantic="POSITION" source="#Cylinder_105-mesh-positions"/>
         </vertices>
-        <polylist count="124">
+        <polylist material="BoothMat1-material" count="124">
           <input semantic="VERTEX" source="#Cylinder_105-mesh-vertices" offset="0"/>
           <input semantic="NORMAL" source="#Cylinder_105-mesh-normals" offset="1"/>
           <vcount>3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 </vcount>
@@ -7913,7 +7913,7 @@
         <vertices id="Cylinder_104-mesh-vertices">
           <input semantic="POSITION" source="#Cylinder_104-mesh-positions"/>
         </vertices>
-        <polylist count="124">
+        <polylist material="BoothMat1-material" count="124">
           <input semantic="VERTEX" source="#Cylinder_104-mesh-vertices" offset="0"/>
           <input semantic="NORMAL" source="#Cylinder_104-mesh-normals" offset="1"/>
           <vcount>3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 </vcount>
@@ -9054,15 +9054,33 @@
       </node>
       <node id="Cylinder_091" name="Cylinder_091" type="NODE">
         <matrix sid="transform">0.3 0 0 16.5 0 0.3 0 -16.5 0 0 0.5 8.5 0 0 0 1</matrix>
-        <instance_geometry url="#Cylinder_110-mesh" name="Cylinder_091"/>
+        <instance_geometry url="#Cylinder_110-mesh" name="Cylinder_091">
+          <bind_material>
+            <technique_common>
+              <instance_material symbol="BoothMat1-material" target="#BoothMat1-material"/>
+            </technique_common>
+          </bind_material>
+        </instance_geometry>
       </node>
       <node id="Cylinder_090" name="Cylinder_090" type="NODE">
         <matrix sid="transform">0.3 0 0 14 0 0.3 0 -11 0 0 0.5 8.5 0 0 0 1</matrix>
-        <instance_geometry url="#Cylinder_109-mesh" name="Cylinder_090"/>
+        <instance_geometry url="#Cylinder_109-mesh" name="Cylinder_090">
+          <bind_material>
+            <technique_common>
+              <instance_material symbol="BoothMat1-material" target="#BoothMat1-material"/>
+            </technique_common>
+          </bind_material>
+        </instance_geometry>
       </node>
       <node id="Cylinder_089" name="Cylinder_089" type="NODE">
         <matrix sid="transform">0.3 0 0 13 0 0.3 0 5.5 0 0 0.5 8.5 0 0 0 1</matrix>
-        <instance_geometry url="#Cylinder_108-mesh" name="Cylinder_089"/>
+        <instance_geometry url="#Cylinder_108-mesh" name="Cylinder_089">
+          <bind_material>
+            <technique_common>
+              <instance_material symbol="BoothMat1-material" target="#BoothMat1-material"/>
+            </technique_common>
+          </bind_material>
+        </instance_geometry>
       </node>
       <node id="Cube_061" name="Cube_061" type="NODE">
         <matrix sid="transform">0.5209447 -0.2954423 0 13.5 2.954423 0.05209447 0 8.25 0 0 0.03 9 0 0 0 1</matrix>
@@ -9096,15 +9114,33 @@
       </node>
       <node id="Cylinder_088" name="Cylinder_088" type="NODE">
         <matrix sid="transform">0.3 0 0 16.5 0 0.3 0 16.5 0 0 0.5 8.5 0 0 0 1</matrix>
-        <instance_geometry url="#Cylinder_107-mesh" name="Cylinder_088"/>
+        <instance_geometry url="#Cylinder_107-mesh" name="Cylinder_088">
+          <bind_material>
+            <technique_common>
+              <instance_material symbol="BoothMat1-material" target="#BoothMat1-material"/>
+            </technique_common>
+          </bind_material>
+        </instance_geometry>
       </node>
       <node id="Cylinder_087" name="Cylinder_087" type="NODE">
         <matrix sid="transform">0.3 0 0 13 0 0.3 0 -5.5 0 0 0.5 8.5 0 0 0 1</matrix>
-        <instance_geometry url="#Cylinder_106-mesh" name="Cylinder_087"/>
+        <instance_geometry url="#Cylinder_106-mesh" name="Cylinder_087">
+          <bind_material>
+            <technique_common>
+              <instance_material symbol="BoothMat1-material" target="#BoothMat1-material"/>
+            </technique_common>
+          </bind_material>
+        </instance_geometry>
       </node>
       <node id="Cylinder_086" name="Cylinder_086" type="NODE">
         <matrix sid="transform">0.3 0 0 14 0 0.3 0 11 0 0 0.5 8.5 0 0 0 1</matrix>
-        <instance_geometry url="#Cylinder_105-mesh" name="Cylinder_086"/>
+        <instance_geometry url="#Cylinder_105-mesh" name="Cylinder_086">
+          <bind_material>
+            <technique_common>
+              <instance_material symbol="BoothMat1-material" target="#BoothMat1-material"/>
+            </technique_common>
+          </bind_material>
+        </instance_geometry>
       </node>
       <node id="Cube_058" name="Cube_058" type="NODE">
         <matrix sid="transform">2.254803 0 0 3.5 0 4 0 -32 0 0 0.25 7.730285 0 0 0 1</matrix>
@@ -10354,7 +10390,13 @@
       </node>
       <node id="Cylinder_085" name="Cylinder_085" type="NODE">
         <matrix sid="transform">0.3 0 0 12.5 0 0.3 0 0 0 0 0.5 8.5 0 0 0 1</matrix>
-        <instance_geometry url="#Cylinder_104-mesh" name="Cylinder_085"/>
+        <instance_geometry url="#Cylinder_104-mesh" name="Cylinder_085">
+          <bind_material>
+            <technique_common>
+              <instance_material symbol="BoothMat1-material" target="#BoothMat1-material"/>
+            </technique_common>
+          </bind_material>
+        </instance_geometry>
       </node>
       <node id="floor_004" name="floor_004" type="NODE">
         <matrix sid="transform">7.784458 0 0 50.27089 0 39.88765 0 0 0 0 1 0 0 0 0 1</matrix>
