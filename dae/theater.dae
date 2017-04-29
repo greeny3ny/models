@@ -5,8 +5,8 @@
       <author>Blender User</author>
       <authoring_tool>Blender 2.78.0 commit date:2017-02-24, commit time:14:33, hash:e92f235283</authoring_tool>
     </contributor>
-    <created>2017-04-29T14:18:07</created>
-    <modified>2017-04-29T14:18:07</modified>
+    <created>2017-04-29T16:26:28</created>
+    <modified>2017-04-29T16:26:28</modified>
     <unit name="meter" meter="1"/>
     <up_axis>Z_UP</up_axis>
   </asset>
@@ -1702,6 +1702,32 @@
         </technique>
       </profile_COMMON>
     </effect>
+    <effect id="BoothMat1_005-effect">
+      <profile_COMMON>
+        <technique sid="common">
+          <phong>
+            <emission>
+              <color sid="emission">0 0 0 1</color>
+            </emission>
+            <ambient>
+              <color sid="ambient">0 0 0 1</color>
+            </ambient>
+            <diffuse>
+              <color sid="diffuse">0.2548301 0.1678372 0.1205772 1</color>
+            </diffuse>
+            <specular>
+              <color sid="specular">0.5 0.5 0.5 1</color>
+            </specular>
+            <shininess>
+              <float sid="shininess">50</float>
+            </shininess>
+            <index_of_refraction>
+              <float sid="index_of_refraction">1</float>
+            </index_of_refraction>
+          </phong>
+        </technique>
+      </profile_COMMON>
+    </effect>
     <effect id="Material_014-effect">
       <profile_COMMON>
         <technique sid="common">
@@ -1963,32 +1989,6 @@
       </profile_COMMON>
     </effect>
     <effect id="BoothMat1_006-effect">
-      <profile_COMMON>
-        <technique sid="common">
-          <phong>
-            <emission>
-              <color sid="emission">0 0 0 1</color>
-            </emission>
-            <ambient>
-              <color sid="ambient">0 0 0 1</color>
-            </ambient>
-            <diffuse>
-              <color sid="diffuse">0.2548301 0.1678372 0.1205772 1</color>
-            </diffuse>
-            <specular>
-              <color sid="specular">0.5 0.5 0.5 1</color>
-            </specular>
-            <shininess>
-              <float sid="shininess">50</float>
-            </shininess>
-            <index_of_refraction>
-              <float sid="index_of_refraction">1</float>
-            </index_of_refraction>
-          </phong>
-        </technique>
-      </profile_COMMON>
-    </effect>
-    <effect id="BoothMat1_005-effect">
       <profile_COMMON>
         <technique sid="common">
           <phong>
@@ -2731,6 +2731,9 @@
     <material id="wallmaterial-material" name="wallmaterial">
       <instance_effect url="#wallmaterial-effect"/>
     </material>
+    <material id="BoothMat1_005-material" name="BoothMat1_005">
+      <instance_effect url="#BoothMat1_005-effect"/>
+    </material>
     <material id="Material_014-material" name="Material_014">
       <instance_effect url="#Material_014-effect"/>
     </material>
@@ -2763,9 +2766,6 @@
     </material>
     <material id="BoothMat1_006-material" name="BoothMat1_006">
       <instance_effect url="#BoothMat1_006-effect"/>
-    </material>
-    <material id="BoothMat1_005-material" name="BoothMat1_005">
-      <instance_effect url="#BoothMat1_005-effect"/>
     </material>
     <material id="BoothMat1_004-material" name="BoothMat1_004">
       <instance_effect url="#BoothMat1_004-effect"/>
@@ -5560,7 +5560,7 @@
         <vertices id="Cube_027-mesh-vertices">
           <input semantic="POSITION" source="#Cube_027-mesh-positions"/>
         </vertices>
-        <polylist count="12">
+        <polylist material="BoothMat1_005-material" count="12">
           <input semantic="VERTEX" source="#Cube_027-mesh-vertices" offset="0"/>
           <input semantic="NORMAL" source="#Cube_027-mesh-normals" offset="1"/>
           <vcount>3 3 3 3 3 3 3 3 3 3 3 3 </vcount>
@@ -5593,7 +5593,7 @@
         <vertices id="Cube_016-mesh-vertices">
           <input semantic="POSITION" source="#Cube_016-mesh-positions"/>
         </vertices>
-        <polylist count="12">
+        <polylist material="BoothMat1_001-material" count="12">
           <input semantic="VERTEX" source="#Cube_016-mesh-vertices" offset="0"/>
           <input semantic="NORMAL" source="#Cube_016-mesh-normals" offset="1"/>
           <vcount>3 3 3 3 3 3 3 3 3 3 3 3 </vcount>
@@ -7583,7 +7583,7 @@
         <vertices id="Cube_015-mesh-vertices">
           <input semantic="POSITION" source="#Cube_015-mesh-positions"/>
         </vertices>
-        <polylist count="12">
+        <polylist material="BoothMat1_003-material" count="12">
           <input semantic="VERTEX" source="#Cube_015-mesh-vertices" offset="0"/>
           <input semantic="NORMAL" source="#Cube_015-mesh-normals" offset="1"/>
           <vcount>3 3 3 3 3 3 3 3 3 3 3 3 </vcount>
@@ -9704,11 +9704,23 @@
       </node>
       <node id="Cube_019" name="Cube_019" type="NODE">
         <matrix sid="transform">-1.04907e-6 -1 0 -31.7604 24 -4.37114e-8 0 0 0 0 10 10 0 0 0 1</matrix>
-        <instance_geometry url="#Cube_027-mesh" name="Cube_019"/>
+        <instance_geometry url="#Cube_027-mesh" name="Cube_019">
+          <bind_material>
+            <technique_common>
+              <instance_material symbol="BoothMat1_005-material" target="#BoothMat1_005-material"/>
+            </technique_common>
+          </bind_material>
+        </instance_geometry>
       </node>
       <node id="Cube_018" name="Cube_018" type="NODE">
         <matrix sid="transform">13 0 0 -23 0 1 0 -24 0 0 10 10 0 0 0 1</matrix>
-        <instance_geometry url="#Cube_016-mesh" name="Cube_018"/>
+        <instance_geometry url="#Cube_016-mesh" name="Cube_018">
+          <bind_material>
+            <technique_common>
+              <instance_material symbol="BoothMat1_001-material" target="#BoothMat1_001-material"/>
+            </technique_common>
+          </bind_material>
+        </instance_geometry>
       </node>
       <node id="roof_005" name="roof_005" type="NODE">
         <matrix sid="transform">3.806602 0 0 -15.19391 0 3.857673 0 11.77493 0 0 0.30531 20 0 0 0 1</matrix>
@@ -10211,7 +10223,7 @@
         </instance_geometry>
       </node>
       <node id="stageRamp" name="stageRamp" type="NODE">
-        <matrix sid="transform">2.101984 0 -0.05364202 -16.83845 0 1 0 0 0.8205705 0 0.1374101 0.53 0 0 0 1</matrix>
+        <matrix sid="transform">2.101984 0 -0.05364202 -16.83845 0 1 0 0 0.8205705 0 0.1374101 0.09835908 0 0 0 1</matrix>
         <instance_geometry url="#Cube_006-mesh" name="stageRamp"/>
       </node>
       <node id="balcony" name="balcony" type="NODE">
@@ -10296,7 +10308,13 @@
       </node>
       <node id="Cube_017" name="Cube_017" type="NODE">
         <matrix sid="transform">13 0 0 -23 0 1 0 24 0 0 10 10 0 0 0 1</matrix>
-        <instance_geometry url="#Cube_015-mesh" name="Cube_017"/>
+        <instance_geometry url="#Cube_015-mesh" name="Cube_017">
+          <bind_material>
+            <technique_common>
+              <instance_material symbol="BoothMat1_003-material" target="#BoothMat1_003-material"/>
+            </technique_common>
+          </bind_material>
+        </instance_geometry>
       </node>
       <node id="Cylinder" name="Cylinder" type="NODE">
         <matrix sid="transform">1 0 0 20 0 1 0 3 0 0 3 3 0 0 0 1</matrix>
@@ -10399,7 +10417,7 @@
         </instance_geometry>
       </node>
       <node id="floor_004" name="floor_004" type="NODE">
-        <matrix sid="transform">7.784458 0 0 50.27089 0 39.88765 0 0 0 0 1 0 0 0 0 1</matrix>
+        <matrix sid="transform">7.784458 0 0 50.57827 0 39.88765 0 0 0 0 1 0 0 0 0 1</matrix>
         <instance_geometry url="#Plane_006-mesh" name="floor_004">
           <bind_material>
             <technique_common>
@@ -10429,7 +10447,7 @@
         </instance_geometry>
       </node>
       <node id="floor_001" name="floor_001" type="NODE">
-        <matrix sid="transform">7.784458 0 0 35.51496 0 12.69359 0 0 0 0 1 0 0 0 0 1</matrix>
+        <matrix sid="transform">7.784458 0 0 35.06004 0 12.69359 0 0 0 0 1 0 0 0 0 1</matrix>
         <instance_geometry url="#Plane_003-mesh" name="floor_001">
           <bind_material>
             <technique_common>
