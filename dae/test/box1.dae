@@ -5,8 +5,8 @@
       <author>Blender User</author>
       <authoring_tool>Blender 2.78.0 commit date:2017-02-24, commit time:14:33, hash:e92f235283</authoring_tool>
     </contributor>
-    <created>2017-05-22T18:29:25</created>
-    <modified>2017-05-22T18:29:25</modified>
+    <created>2017-05-22T18:35:20</created>
+    <modified>2017-05-22T18:35:20</modified>
     <unit name="meter" meter="1"/>
     <up_axis>Z_UP</up_axis>
   </asset>
@@ -98,10 +98,24 @@
       </extra>
     </light>
   </library_lights>
-  <library_images/>
+  <library_images>
+    <image id="texture_001" name="texture_001">
+      <init_from>texture.001.png</init_from>
+    </image>
+  </library_images>
   <library_effects>
     <effect id="baked-effect">
       <profile_COMMON>
+        <newparam sid="texture_001-surface">
+          <surface type="2D">
+            <init_from>texture_001</init_from>
+          </surface>
+        </newparam>
+        <newparam sid="texture_001-sampler">
+          <sampler2D>
+            <source>texture_001-surface</source>
+          </sampler2D>
+        </newparam>
         <technique sid="common">
           <phong>
             <emission>
@@ -111,7 +125,7 @@
               <color sid="ambient">0 0 0 1</color>
             </ambient>
             <diffuse>
-              <color sid="diffuse">0.64 0.64 0.64 1</color>
+              <texture texture="texture_001-sampler" texcoord="UVMap"/>
             </diffuse>
             <specular>
               <color sid="specular">0.5 0.5 0.5 1</color>
@@ -185,7 +199,9 @@
         <instance_geometry url="#Cone_001-mesh" name="baked">
           <bind_material>
             <technique_common>
-              <instance_material symbol="baked-material" target="#baked-material"/>
+              <instance_material symbol="baked-material" target="#baked-material">
+                <bind_vertex_input semantic="UVMap" input_semantic="TEXCOORD" input_set="0"/>
+              </instance_material>
             </technique_common>
           </bind_material>
         </instance_geometry>
