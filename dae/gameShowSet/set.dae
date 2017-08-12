@@ -5,8 +5,8 @@
       <author>Blender User</author>
       <authoring_tool>Blender 2.78.0 commit date:2017-02-24, commit time:14:33, hash:e92f235283</authoring_tool>
     </contributor>
-    <created>2017-08-12T13:58:52</created>
-    <modified>2017-08-12T13:58:52</modified>
+    <created>2017-08-12T14:07:22</created>
+    <modified>2017-08-12T14:07:22</modified>
     <unit name="meter" meter="1"/>
     <up_axis>Z_UP</up_axis>
   </asset>
@@ -502,11 +502,11 @@
         <instance_light url="#Lamp_001-light"/>
       </node>
       <node id="Cube_003" name="Cube_003" type="NODE">
-        <matrix sid="transform">0.4618927 -0.8869358 0 -0.241272 0.8869358 0.4618927 0 5.276747 0 0 1 0.2007132 0 0 0 1</matrix>
+        <matrix sid="transform">0.4618927 -0.8869358 0 -0.831885 0.8869358 0.4618927 0 3.199613 0 0 0.3414822 0.2007132 0 0 0 1</matrix>
         <instance_geometry url="#Cube_003-mesh" name="Cube_003"/>
       </node>
       <node id="Cube_002" name="Cube_002" type="NODE">
-        <matrix sid="transform">0.8043638 -0.5941371 0 4.287286 0.5941371 0.8043638 0 10.17944 0 0 1 0.2007132 0 0 0 1</matrix>
+        <matrix sid="transform">0.8043638 -0.5941371 0 3.696673 0.5941371 0.8043638 0 8.10231 0 0 0.3414822 0.2007132 0 0 0 1</matrix>
         <instance_geometry url="#Cube_002-mesh" name="Cube_002"/>
       </node>
       <node id="Camera" name="Camera" type="NODE">
@@ -538,11 +538,11 @@
         </instance_geometry>
       </node>
       <node id="Cube_001" name="Cube_001" type="NODE">
-        <matrix sid="transform">0.6837507 -0.7297157 0 1.822271 0.7297157 0.6837507 0 8.047407 0 0 1 0.2007132 0 0 0 1</matrix>
+        <matrix sid="transform">0.6837507 -0.7297157 0 1.231658 0.7297157 0.6837507 0 5.970273 0 0 0.3414822 0.2007132 0 0 0 1</matrix>
         <instance_geometry url="#Cube_001-mesh" name="Cube_001"/>
       </node>
       <node id="Cylinder" name="Cylinder" type="NODE">
-        <matrix sid="transform">3.534638 -0.8551476 0 1.430298 4.210915 0.7178102 0 6.900092 0 0 1.75796 6.250966 0 0 0 1</matrix>
+        <matrix sid="transform">3.534638 -0.8551476 0 2.741075 4.210915 0.7178102 0 5.517608 0 0 1.75796 6.250966 0 0 0 1</matrix>
         <instance_geometry url="#Cylinder-mesh" name="Cylinder">
           <bind_material>
             <technique_common>
